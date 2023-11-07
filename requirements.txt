@@ -1,0 +1,10 @@
+h5py==3.7.0
+imgaug @ git+https://github.com/aleju/imgaug.git@0101108d4fed06bc5056c4a03e2bcb0216dac326
+numpy==1.23.2
+opencv-python>=4.2.0.32
+pathlib==1.0.1
+torch==1.12.1
+torchsummary==1.5.1
+tqdm==4.64.0
+tensorboardX==2.5.1
+jupyterlab

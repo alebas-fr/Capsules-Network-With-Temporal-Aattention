@@ -1,0 +1,48 @@
+{
+    "name": "Gesture Recognition",
+    "dataset": "SHREC2017",
+    "epochs": 500,
+    "phase": "train",
+    "data": {
+      "optical_flow": false,
+      "type": "normal",
+      "n_classes": 14,
+      "n_frames":40,
+      "data_path": "path to dataset",
+      "result_dir": "./result",
+      "batch_size": 4,
+      "imsize":224,
+      "imsize_transform":190
+    },
+    "checkpoints": {
+      "save_policy": "best",
+      "save_name": "train_shrec14",
+      "save_dir": "./checkpoints/",
+      "save_iters": 30,
+      "tb_path": "train_log"
+    },
+    "solver": {
+      "type": "AdamW",
+      "workers": 2,
+      "weight_decay": 0.0001,
+      "base_lr": 0.0001,
+      "decay_steps": [50,75,100,150,200,250,300,350,400,450],
+      "gamma":0.01
+    },
+    "network":{
+      "backbone": "resnet",
+      "input_dim":512,
+      "layers_to_unfreeze":8,
+      "layers_to_delete":2,
+      "n_caps":8,
+      "prim_caps_dim":48,
+      "dense_caps_dim":96,
+      "n_routing":3,
+      "pretrained": true,
+      "ff_size": 1024,
+      "n_head": 8,
+      "dropout2d" : 0.1,
+      "dropout1d": 0.5,
+      "n_module": 3
+    }
+}
